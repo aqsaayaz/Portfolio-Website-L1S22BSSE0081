@@ -1,0 +1,1 @@
+name: Linting pipeline on: push:branches:[develop] pull-requests:branches:[develop] jobs: lint: runs-on: ubuntu-latest steps: -name:checkout code user:action/checkout@v3 -name:set up node.js uses:actions/setup-node@v3 with node-version: "18" -name:install dependencies run:npm intsall -name: run htmlhint run:npx htmlhint"/.html" -name:run stylelint run:npx stylelint"/.css"
