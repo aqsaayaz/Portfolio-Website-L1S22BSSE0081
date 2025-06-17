@@ -1,0 +1,1 @@
+{ "extends":"styllint-config-standard", "rules":{ "declaration-block-no-duplicate-properties":true,"no-duplicate-selectors":true, "property-case":"lowe","value-keyword-case":"lower","selector-type-case":"lower","block-no-empty":true}}
