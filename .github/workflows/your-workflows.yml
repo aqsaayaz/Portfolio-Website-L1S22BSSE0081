@@ -1,0 +1,35 @@
+name: Deploy to developmnet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js (example)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to development
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          echo "Deploying to production environment"
+          echo "Using API token: $API_TOKEN"
+          # Add your deployment commands here
+
